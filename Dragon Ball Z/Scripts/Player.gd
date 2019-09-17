@@ -11,22 +11,34 @@ func _ready():
 	pass 
 
 func _process(delta):
+	_Input()
+
+func _Input():
 	motion.y += gravity
 	if is_on_floor() && Input.is_action_pressed("ui_up"):
-		motion.y = pjump
+		motion.y = pjump 
 		$AnimatedSprite.set_animation("Jump")
 	elif Input.is_action_pressed("ui_left"):
 		motion.x = -pspeed
 		if is_on_floor():
-			$AnimatedSprite.set_animation("DashBack")
+			if $AnimatedSprite.flip_h == true:
+				$AnimatedSprite.set_animation("DashForward")
+			elif Input.is_action_pressed("ui_focus_next") && $AnimatedSprite.flip_h == false:
+				$AnimatedSprite.set_animation("DashBack")
+			else:
+				$AnimatedSprite.set_flip_h(true) 
 	elif Input.is_action_pressed("ui_right"):
 		motion.x = pspeed
 		if is_on_floor():
-			$AnimatedSprite.set_animation("DashForward")	
+			if $AnimatedSprite.flip_h == false:
+				$AnimatedSprite.set_animation("DashForward")
+			elif Input.is_action_pressed("ui_focus_next") && $AnimatedSprite.flip_h == true:
+				$AnimatedSprite.set_animation("DashBack")
+			else:
+				$AnimatedSprite.set_flip_h(false) 
 	else:
 		motion.x = 0
 		if is_on_floor():
 			motion.y = 0
 			$AnimatedSprite.set_animation("Idle")
-
 	motion = move_and_slide(motion, GROUND)
