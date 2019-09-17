@@ -3,10 +3,10 @@
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Goku/Idle/Goku-Sprites_02.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Goku/Idle/Layer 0.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/Goku/MoveForward/Start.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/Goku/MoveForward/DashForward.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/Goku/MoveBackward/GokuBase.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/Goku/MoveBackward/DodgeBack.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Goku/MoveBackward/GokuBase.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Goku/MoveBackward/DodgeBack.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Goku/MoveForward/Start.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Goku/MoveForward/DashForward.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/Goku/Jump/1.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/Goku/Jump/2.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/Goku/Jump/3.png" type="Texture" id=10]
@@ -21,12 +21,12 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": false,
-"name": "DashForward",
+"name": "DashBack",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": false,
-"name": "DashBack",
+"name": "DashForward",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
@@ -50,4 +50,3 @@ playing = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 1.58155, 5.87433 )
 shape = SubResource( 2 )
-
