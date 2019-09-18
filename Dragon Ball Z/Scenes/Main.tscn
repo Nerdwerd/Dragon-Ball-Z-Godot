@@ -99,3 +99,4 @@ tile_data = PoolIntArray( 720915, 1, 0, 720916, 0, 0, 720917, 0, 0, 720918, 0, 0
 
 [node name="Goku" parent="." instance=ExtResource( 2 )]
 position = Vector2( 269.635, 126.015 )
+
