@@ -18,10 +18,9 @@ func _process(delta):
 		_Kamehameha()
 	elif Input.is_action_just_released("KiBlast"):
 		$AnimatedSprite.set_animation("Ha")
-		movement = true
 		tim = false
-		$Timer.set_wait_time(3)
-		
+		_on_AnimatedSprite_animation_finished()
+		movement = true
 	elif tim == true:
 		_Input()
 
@@ -74,5 +73,10 @@ func _Kamehameha():
 	
 
 func _on_Timer_timeout():
+	tim = true
+	pass # Replace with function body.
+
+
+func _on_AnimatedSprite_animation_finished():
 	tim = true
 	pass # Replace with function body.
