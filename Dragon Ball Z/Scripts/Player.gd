@@ -17,8 +17,8 @@ func _process(delta):
 	if Input.is_action_pressed("KiBlast"):
 		_Kamehameha()
 	elif Input.is_action_just_released("KiBlast"):
-		$AnimatedSprite.set_animation("Ha")
 		tim = false
+		$AnimatedSprite.set_animation("Ha")
 		_on_AnimatedSprite_animation_finished()
 		movement = true
 	elif tim == true:
